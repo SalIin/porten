@@ -1,16 +1,17 @@
 import React from 'react';
+import { goods } from '../../data/goods';
 import { CardItem } from '../CardItem';
 
-export const Goods = ({ title, category }) => {
+export const Goods = () => {
 	return (
 		<>
 			<h1>
-				{title}
+				Goods
 			</h1>
 			<div className="jumbotron">
 				<div className="row justify-content-around">
 					{
-						category.map(item => <CardItem name={item.name} desc={item.desc} img={item.img_url} id={item.id} key={item.id} />)
+						goods.map(item => <CardItem name={item.name} desc={item.desc} img={item.img_url} id={item.id} key={item.id} />)
 					}
 				</div>
 			</div>

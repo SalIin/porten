@@ -5,7 +5,7 @@ import './navbar.scss';
 
 export const Navbar = () => {
 	return (
-		<nav className="header__navbar navbar">
+		<nav className="header__navbar navbar" id="navbar">
 			<div className="container">
 				<NavbarLogo />
 				<NavbarMenu />

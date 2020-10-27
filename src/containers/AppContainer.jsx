@@ -8,14 +8,18 @@ import { AppRoutes } from '../routes/appRoutes';
 
 export const AppContainer = () => {
 	const [storedProducts, setStoredProducts] = useState([]);
+	const [isScrolled, setIsScrolled] = useState(false);
+
 	return (
 		<BrowserRouter>
-			<StoredProductsProvider value={setStoredProducts}>
+			<StoredProductsProvider value={[storedProducts, setStoredProducts]}>
 				<Switch>
 					<Route path={AppRoutes.Basket}>
 						<BasketPage storedProducts={storedProducts} />
 					</Route>
-					<Route path={AppRoutes.Goods} component={GoodsPage} />
+					<Route path={AppRoutes.Goods}>
+						<GoodsPage isScrolled={isScrolled} setIsScrolled={setIsScrolled} />
+					</Route>
 					<Route path={AppRoutes.Home} component={HomePage} exact />
 				</Switch>
 			</StoredProductsProvider>

@@ -5,18 +5,18 @@ import { StoredProductsListItem } from '../StoredProductsListItem/StoredProducts
 import './stored-products-list.scss';
 
 export const StoredProductsList = ({ storedProducts }) => {
-	let renderGoods;
-	for(let key in goods) {
-		for(let id of storedProducts) {
-			renderGoods = goods[key].filter(item => item.id === id);
+	const renderGoods = [];
+	for(let id of storedProducts) {
+		for(let item of goods) {
+			if(id === item.id) {
+				renderGoods.push(item);
+			}
 		}
 	}
 
-	console.log(renderGoods);
-
 	return (
 		<ul className="list-group basket-list">
-			{storedProducts.map(item => <StoredProductsListItem name={item.name} key={item} />)}
+			{renderGoods.map(item => <StoredProductsListItem name={item.name} key={item.id * Math.random()} />)}
 		</ul>
 	)
 }

@@ -23,4 +23,17 @@
       transition: all 0.3s ease;
     }
   }
+  .not-empty {
+    position: relative;
+    &::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background-color: #fff;
+      position: absolute;
+      bottom: 40px;
+      right: 10px;
+    }
+  }
 }
