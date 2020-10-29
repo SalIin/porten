@@ -1,0 +1,15 @@
+.account {
+  h1 {
+    border-bottom: 2px solid #fff;
+    padding-bottom: 15px;
+    width: fit-content;
+    margin-top: 50px;
+  }
+  .jumbotron {
+    background-color: #0f0f0f;
+    margin-top: 15px;
+    .card-body {
+      background-color: #191b1c;
+    }
+  }
+}

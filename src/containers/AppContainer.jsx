@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { AccountPage } from '../pages/AccountPage/AccountPage';
 import { BasketPage } from '../pages/BasketPage/BasketPage';
 import { GoodsPage } from '../pages/GoodsPage/GoodsPage';
 import { HomePage } from '../pages/HomePage/HomePage';
@@ -14,6 +15,7 @@ export const AppContainer = () => {
 		<BrowserRouter>
 			<StoredProductsProvider value={[storedProducts, setStoredProducts]}>
 				<Switch>
+					<Route path={AppRoutes.Account} component={AccountPage} />
 					<Route path={AppRoutes.Basket}>
 						<BasketPage storedProducts={storedProducts} />
 					</Route>
